@@ -55,4 +55,4 @@ class ApiToken < ActiveRecord::Base
     end
   end # find_by_token
 
-end ApiToken
+end # ApiToken
