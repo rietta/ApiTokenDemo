@@ -2,7 +2,7 @@ class CreateApiTokens < ActiveRecord::Migration
   def change
     create_table :api_tokens do |t|
       t.string :identifier, null: false
-      t.string :password
+      t.string :password_digest
 
       t.timestamps
     end
