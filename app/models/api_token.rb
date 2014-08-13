@@ -26,14 +26,14 @@ class ApiToken < ActiveRecord::Base
 
     # Create a UUID v4 without dashes, which is guarunteed to be unique as per
     # See http://www.ietf.org/rfc/rfc4122.txt
-    self.identifier = SecureRandom.uuid().gsub('-', '')
-    self.generated_token = "#{identifier}:#{generated_password}".strip
+    self.identifier       = uuid_without_dashes
+    self.generated_token  = "#{identifier}:#{generated_password}".strip
 
     # We could use the password portion, but including the username gives this a little
     # extra salt and makes the verifier easier since we can pass in the whole string
     # to the has_secure_password bcrypt-based authenticate method.
     self.password = generated_token
-  end
+  end # initialize
 
   ####################################################
   # Finders and its helper
@@ -54,5 +54,12 @@ class ApiToken < ActiveRecord::Base
       return nil
     end
   end # find_by_token
+
+  ####################################################
+  private
+
+  def uuid_without_dashes
+    SecureRandom.uuid().gsub('-', '')
+  end
 
 end # ApiToken

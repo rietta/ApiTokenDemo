@@ -14,4 +14,5 @@ class MailMergeTokens
     end
     out.close
   end
+
 end
