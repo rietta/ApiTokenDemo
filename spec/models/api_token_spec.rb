@@ -17,6 +17,18 @@ describe ApiToken do
       expect(@token_key.length).to be >= 145
     end
 
-  end
+    it 'The token key can be validated' do
+      expect(ApiToken.find_by_token(@token_key)).to_not be_nil
+    end
+
+    it 'A modified key is invalid' do
+      expect(ApiToken.find_by_token(@token_key.upcase)).to be_nil
+    end
+
+    it 'Looking up the token cannot retrieve the whole key' do
+      expect(ApiToken.find_by_token(@token_key).generated_token).to be_nil
+    end
+
+  end # happy path
 
 end
