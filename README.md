@@ -19,10 +19,8 @@ The generated token will look like this:
 eac4d6c04e6f4658977fbcc1448c6ae3:096fabb7192b99fc817c30f3cecc4c5c06583f338be0efe2d6e69027c532977c2b48fb0d4a785d3c8cc0651989cff5f19027eb2a35a96a65
 ```
 
-## Video Explanation on Why
-
-<iframe src="https://player.vimeo.com/video/127221515" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## Further reading
 
+- [Does a UUID make a secure API token for an Android or iOS application's API RESTful endpoints? (video)](https://vimeo.com/127221515)
 - [Ruby on Rails 4.1.1: ActiveModel::SecurePassword::ClassMethods](http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html)
